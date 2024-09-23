@@ -1,0 +1,173 @@
+@keyframes downUp {
+  0% {
+    transform: translate(0, 50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+main {
+  background-color: white;
+  height: 5000px;
+}
+
+.sec1 {
+  position: relative;
+  width: 100%;
+  height: 540px;
+}
+.sec1 .container .slider {
+  width: 100%;
+  height: 540px;
+}
+.sec1 .container .slider .card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 540px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sec1 .container .slider .card .card_con {
+  display: flex;
+  align-items: center;
+  max-width: 1280px;
+  padding: 0 2.5rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  height: 100%;
+}
+.sec1 .container .slider .card .card_con .text_box .title {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.075rem;
+  transform: translate(0, 50px);
+  opacity: 0;
+  animation-name: downUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  line-height: 1.25;
+}
+.sec1 .container .slider .card .card_con .text_box .text {
+  color: #ffffff;
+  font-size: 1.5rem;
+  letter-spacing: -0.075rem;
+  margin-top: 1.25rem;
+  transform: translate(0, 50px);
+  opacity: 0;
+  animation-name: downUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.1s;
+  line-height: 1.25;
+}
+.sec1 .container .slider .card .card_con .text_box .more {
+  display: inline-block;
+  min-width: 11.875rem;
+  color: #000;
+  font-weight: 600;
+  line-height: 3.75rem;
+  background: #fff url(../img/main/sec1/icon/more.png) no-repeat right 1.5rem center;
+  border-radius: 3.75rem;
+  padding: 0 1.875rem;
+  box-sizing: border-box;
+  margin-top: 2.5rem;
+  transform: translate(0, 50px);
+  opacity: 0;
+  animation-name: downUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}
+.sec1 .container .slider .card.first {
+  background-image: url(../img/main/sec1/slider_bg/1.jpg);
+}
+.sec1 .container .slider .card.second {
+  background-image: url(../img/main/sec1/slider_bg/2.jpg);
+}
+.sec1 .container .slider .card.third {
+  background-image: url(../img/main/sec1/slider_bg/3.jpg);
+}
+.sec1 .container .slider .card.fourth {
+  background-image: url(../img/main/sec1/slider_bg/4.jpg);
+}
+.sec1 .container .slider .card.second .text_box .title,
+.sec1 .container .slider .card.second .text_box .text,
+.sec1 .container .slider .card.third .text_box .title,
+.sec1 .container .slider .card.third .text_box .text {
+  color: black;
+}
+.sec1 .container .slide_page {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.sec1 .container .slide_page .container {
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.sec1 .container .slide_page .container .wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  bottom: 1.25rem;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 2rem;
+  padding: 0 0.625rem;
+}
+.sec1 .container .slide_page .container .wrap .now {
+  width: 2rem;
+}
+.sec1 .container .slide_page .container .wrap span {
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.sec1 .container .slide_page .container .wrap .line {
+  width: 1px;
+  height: 10px;
+  opacity: 0.5;
+  background-color: white;
+}
+.sec1 .container .arrow_box {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 50%;
+}
+.sec1 .container .arrow_box button {
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
+  background-image: url(../img/main/sec1/slide_arrow.png);
+  background-color: transparent;
+  overflow: hidden;
+}
+.sec1 .container .arrow_box button.right {
+  background-position-x: -6rem;
+}
+
+.sec2 .container {
+  max-width: 1280px;
+  padding: 0 2.5rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+}/*# sourceMappingURL=index.css.map */

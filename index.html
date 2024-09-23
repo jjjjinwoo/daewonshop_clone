@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>대원샵</title>
+    <!-- css -->
     <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <!-- jquery -->
+    <script src="./js/jquery.min.js"></script>
+    <!-- slick -->
+    <script src="./js/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="./css/slick/slick.css" />
+    <link rel="stylesheet" href="./css/slick/slick-theme.css" />
   </head>
   <body>
     <header>
@@ -32,7 +40,7 @@
       <div class="header_down">
         <div class="container">
           <div class="logo">
-            <a class="menu">
+            <a class="menu" onclick="subMenuOn()">
               <div class="l1"></div>
               <div class="l2"></div>
               <div class="l3"></div>
@@ -59,19 +67,28 @@
           <div class="btn_box">
             <a class="first" href="#">
               <figure class="img_circle">
-                <img src="./img/main/header/recent.jpg" alt="recent" />
+                <img
+                  src="./img/main/header/icon/quick/recent.svg"
+                  alt="recent"
+                />
               </figure>
               <em>최근 본 상품</em>
             </a>
             <a class="second" href="#">
               <figure class="img_circle">
-                <img src="./img/main/header/icon/mypage.png" alt="recent" />
+                <img
+                  src="./img/main/header/icon/quick/mypage.png"
+                  alt="recent"
+                />
               </figure>
               <em>마이페이지</em>
             </a>
             <a class="third" href="#">
               <figure class="img_circle">
-                <img src="./img/main/header/icon/basket.png" alt="recent" />
+                <img
+                  src="./img/main/header/icon/quick/basket.png"
+                  alt="recent"
+                />
               </figure>
               <em>장바구니</em>
               <span class="num">0</span>
@@ -79,9 +96,316 @@
           </div>
         </div>
       </div>
-      <div class="side_menu"></div>
     </header>
-    <main></main>
+    <main>
+      <div class="side_menu">
+        <div class="container">
+          <div class="left">
+            <a class="menu" onclick="subMenuOn()">
+              <div class="l1"></div>
+              <div class="l2"></div>
+              <div class="l3"></div>
+            </a>
+            <a class="category first" href="#">예약판매</a>
+            <a class="category second" href="#">신상품</a>
+            <a class="category third" href="#">재입고</a>
+            <a class="category fourth" href="#">다운로드</a>
+          </div>
+          <div class="right">
+            <a class="hotlink first" href="#">베스트</a>
+            <a class="hotlink second" href="#">이벤트ㆍ쿠폰</a>
+            <a class="hotlink third" href="#">출석체크</a>
+          </div>
+        </div>
+        <div class="sub_menu">
+          <div class="container">
+            <div class="menu_box">
+              <div class="depth_wrap">
+                <div class="depth first on">
+                  <ul>
+                    <li><a href="#">게임</a></li>
+                    <li><a href="#">피규어/컬렉션</a></li>
+                    <li><a href="#">완구/조립/봉제</a></li>
+                    <li><a href="#">디자인 문구</a></li>
+                    <li><a href="#">도서/음반/취미</a></li>
+                    <li><a href="#">리빙/키친</a></li>
+                    <li><a href="#">카드게임/스포츠카드</a></li>
+                    <li><a href="#">패션잡화/악세서리</a></li>
+                    <li><a href="#">한눈에보기</a></li>
+                    <li><a href="#">예약판매</a></li>
+                    <li><a href="#">스튜디오 지브리</a></li>
+                  </ul>
+                </div>
+                <div class="depth second game">
+                  <ul>
+                    <li><a href="#">전체</a></li>
+                    <li><a href="#">하드웨어</a></li>
+                    <li><a href="#">소프트웨어</a></li>
+                    <li><a href="#">주변기기</a></li>
+                    <li><a href="#">악세서리</a></li>
+                    <li><a href="#">아미보</a></li>
+                    <li><a href="#">캐릭터상품</a></li>
+                    <li><a href="#">캐릭터별</a></li>
+                  </ul>
+                </div>
+                <div class="depth second figure">
+                  <ul>
+                    <li><a href="#">전체</a></li>
+                    <li><a href="#">피규어</a></li>
+                    <li><a href="#">월드 콜렉터블 피규어</a></li>
+                    <li><a href="#">이스턴모형</a></li>
+                    <li><a href="#">넨도로이드</a></li>
+                    <li><a href="#">랜덤박스</a></li>
+                    <li><a href="#">손가락인형</a></li>
+                    <li><a href="#">풀백카</a></li>
+                    <li><a href="#">기타</a></li>
+                  </ul>
+                </div>
+                <div class="depth third">
+                  <ul>
+                    <li><a href="#">전체</a></li>
+                    <li><a href="#">스위치</a></li>
+                    <li><a href="#">기타</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="banner_box">
+                <a href="#">
+                  <img
+                    src="./img/main/header/menu_banner.png"
+                    alt="menu_banner"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="brand_box">
+              <a class="item" href="#">
+                <figure>
+                  <img
+                    src="./img/main/sec2/brand/nintendo.png"
+                    alt="nintendo"
+                  />
+                </figure>
+                <em>닌텐도 스위치</em>
+              </a>
+              <a class="item" href="#">
+                <figure>
+                  <img src="./img/main/sec2/brand/amibo.png" alt="nintendo" />
+                </figure>
+                <em>아미보</em>
+              </a>
+              <a class="item" href="#">
+                <figure>
+                  <img
+                    src="./img/main/sec2/brand/dotorisup.png"
+                    alt="nintendo"
+                  />
+                </figure>
+                <em>도토리숲</em>
+              </a>
+              <a class="item" href="#">
+                <figure>
+                  <img src="./img/main/sec2/brand/gamelab.png" alt="nintendo" />
+                </figure>
+                <em>대원게임랩</em>
+              </a>
+              <a class="item" href="#">
+                <figure>
+                  <img
+                    src="./img/main/sec2/brand/daewonci.png"
+                    alt="nintendo"
+                  />
+                </figure>
+                <em>대원씨아이</em>
+              </a>
+              <a class="item" href="#">
+                <figure>
+                  <img src="./img/main/sec2/brand/marvel.png" alt="nintendo" />
+                </figure>
+                <em>MCS</em>
+              </a>
+              <a class="item" href="#">
+                <figure>
+                  <img
+                    src="./img/main/sec2/brand/banpresto.png"
+                    alt="nintendo"
+                  />
+                </figure>
+                <em>반프레스토</em>
+              </a>
+              <a class="item" href="#">
+                <figure>
+                  <img
+                    src="./img/main/sec2/brand/diaclone.png"
+                    alt="nintendo"
+                  />
+                </figure>
+                <em>다이아클론</em>
+              </a>
+              <a class="item" href="#">
+                <figure>
+                  <img src="./img/main/sec2/brand/yup.png" alt="nintendo" />
+                </figure>
+                <em>YUP</em>
+              </a>
+              <a class="item" href="#">
+                <figure>
+                  <img
+                    src="./img/main/sec2/brand/chiikawa.png"
+                    alt="nintendo"
+                  />
+                </figure>
+                <em>먼작귀</em>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="sec1">
+        <div class="container">
+          <div class="slider">
+            <a href="#" class="card first">
+              <div class="card_con">
+                <div class="text_box">
+                  <h3 class="title">
+                    인디아나 존스<br />
+                    그레이트 서클 스탠다드 에디션
+                  </h3>
+                  <p class="text">
+                    스릴 넘치는 이야기와 모험을 생생하게 체험하세요!
+                  </p>
+                  <span class="more"> 자세히보기 </span>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="card second">
+              <div class="card_con">
+                <div class="text_box">
+                  <h3 class="title">
+                    미리 준비하는 2025년<br />
+                    지브리 2025 다이어리 시리즈
+                  </h3>
+                  <p class="text">
+                    2025 다이어리 구매 시<br />
+                    가죽 북마크 증정!
+                  </p>
+                  <span class="more"> 자세히보기 </span>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="card third">
+              <div class="card_con">
+                <div class="text_box">
+                  <h3 class="title">
+                    너로 정했다!<br />
+                    포근포근 반려인형
+                  </h3>
+                  <p class="text">지브리 봉제인형 기획전</p>
+                  <span class="more"> 자세히보기 </span>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="card fourth">
+              <div class="card_con">
+                <div class="text_box">
+                  <h3 class="title">
+                    다이아클론<br />
+                    다이아배틀스 X-1
+                  </h3>
+                  <p class="text">예약판매 25년 3월 순차출고</p>
+                  <span class="more"> 자세히보기 </span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="slide_page">
+            <div class="container">
+              <div class="wrap">
+                <div class="now">
+                  <span class="n1">1</span>
+                  <span class="n2">2</span>
+                  <span class="n3">3</span>
+                  <span class="n4">4</span>
+                </div>
+                <div class="line"></div>
+                <span class="all">4</span>
+              </div>
+            </div>
+          </div>
+          <div class="arrow_box">
+            <button class="left"></button>
+            <button class="right"></button>
+          </div>
+        </div>
+      </section>
+      <section class="sec2">
+        <div class="container">
+          <div class="brand_box">
+            <a class="item" href="#">
+              <figure>
+                <img src="./img/main/sec2/brand/nintendo.png" alt="nintendo" />
+              </figure>
+              <em>닌텐도 스위치</em>
+            </a>
+            <a class="item" href="#">
+              <figure>
+                <img src="./img/main/sec2/brand/amibo.png" alt="nintendo" />
+              </figure>
+              <em>아미보</em>
+            </a>
+            <a class="item" href="#">
+              <figure>
+                <img src="./img/main/sec2/brand/dotorisup.png" alt="nintendo" />
+              </figure>
+              <em>도토리숲</em>
+            </a>
+            <a class="item" href="#">
+              <figure>
+                <img src="./img/main/sec2/brand/gamelab.png" alt="nintendo" />
+              </figure>
+              <em>대원게임랩</em>
+            </a>
+            <a class="item" href="#">
+              <figure>
+                <img src="./img/main/sec2/brand/daewonci.png" alt="nintendo" />
+              </figure>
+              <em>대원씨아이</em>
+            </a>
+            <a class="item" href="#">
+              <figure>
+                <img src="./img/main/sec2/brand/marvel.png" alt="nintendo" />
+              </figure>
+              <em>MCS</em>
+            </a>
+            <a class="item" href="#">
+              <figure>
+                <img src="./img/main/sec2/brand/banpresto.png" alt="nintendo" />
+              </figure>
+              <em>반프레스토</em>
+            </a>
+            <a class="item" href="#">
+              <figure>
+                <img src="./img/main/sec2/brand/diaclone.png" alt="nintendo" />
+              </figure>
+              <em>다이아클론</em>
+            </a>
+            <a class="item" href="#">
+              <figure>
+                <img src="./img/main/sec2/brand/yup.png" alt="nintendo" />
+              </figure>
+              <em>YUP</em>
+            </a>
+            <a class="item" href="#">
+              <figure>
+                <img src="./img/main/sec2/brand/chiikawa.png" alt="nintendo" />
+              </figure>
+              <em>먼작귀</em>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer></footer>
+    <script src="./js/index.js"></script>
   </body>
 </html>
