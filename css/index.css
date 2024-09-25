@@ -683,6 +683,7 @@ h2 {
   margin: 0 auto;
 }
 .sec5 .container .btn_box {
+  display: flex;
   margin: 2.5rem auto 0;
 }
 .sec5 .container .btn_box .big {
@@ -693,6 +694,17 @@ h2 {
   background-color: #888;
   overflow: hidden;
 }
+.sec5 .container .btn_box .small {
+  margin-left: 1.5rem;
+}
 .sec5 .container .btn_box .small a {
+  border-radius: 1.25rem;
+  display: block;
   width: 17.625rem;
+  height: 17.625rem;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.sec5 .container .btn_box .small a:last-child {
+  margin-top: 1.5rem;
 }/*# sourceMappingURL=index.css.map */

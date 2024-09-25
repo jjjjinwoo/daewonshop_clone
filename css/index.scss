@@ -737,6 +737,7 @@ h2 {
     box-sizing: border-box;
     margin: 0 auto;
     .btn_box {
+      display: flex;
       margin: 2.5rem auto 0;
       .big {
         display: block;
@@ -747,8 +748,17 @@ h2 {
         overflow: hidden;
       }
       .small {
+        margin-left: 1.5rem;
         a {
+          border-radius: 1.25rem;
+          display: block;
           width: 17.625rem;
+          height: 17.625rem;
+          background-color: #ffffff;
+          overflow: hidden;
+        }
+        a:last-child {
+          margin-top: 1.5rem;
         }
       }
     }
