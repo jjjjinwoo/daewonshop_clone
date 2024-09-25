@@ -82,4 +82,8 @@
 
 .slick-arrow.slick-hidden {
   display: none;
+}
+
+.sec4 .slick-list {
+  overflow: visible;
 }/*# sourceMappingURL=slick.css.map */

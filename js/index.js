@@ -35,6 +35,14 @@ function subMenuOn(e) {
     for (var i = 0; i < menuBtn.length; i++) {
       menuBtn[i].classList.remove("on");
     }
+    depth2[0].classList.remove("on");
+    depth3[0].classList.remove("on");
+    for (var i = 0; i < depth1Text.length; i++) {
+      depth1Text[i].classList.remove("on");
+    }
+    for (var i = 0; i < depth2Text.length; i++) {
+      depth2Text[i].classList.remove("on");
+    }
     smSum--;
   }
 }
@@ -47,7 +55,8 @@ const depth2Text = document.querySelectorAll(".sub_menu .depth.second li");
 const depth3 = document.querySelectorAll(".sub_menu .depth.third");
 
 for (var i = 0; i < depth1Text.length; i++) {
-  depth1Text[i].addEventListener("click", function () {
+  depth1Text[i].addEventListener("click", function (e) {
+    event.preventDefault();
     for (var i = 0; i < depth1Text.length; i++) {
       depth1Text[i].classList.remove("on");
     }
@@ -55,22 +64,22 @@ for (var i = 0; i < depth1Text.length; i++) {
   });
 }
 
-depth1Text[0].addEventListener("click", function () {
-  for (var i = 0; i < depth2.length; i++) {
-    depth2[i].classList.remove("on");
-  }
-  depth2[0].classList.add("on");
-});
+for (var i = 0; i < depth1Text.length; i++) {
+  depth1Text[i].addEventListener("click", function () {
+    event.preventDefault();
+    for (var i = 0; i < depth1Text.length; i++) {
+      depth1Text[i].classList.remove("on");
+      depth3[0].classList.remove("on");
+    }
+    this.classList.add("on");
 
-depth1Text[1].addEventListener("click", function () {
-  for (var i = 0; i < depth2.length; i++) {
-    depth2[i].classList.remove("on");
-  }
-  depth2[1].classList.add("on");
-});
+    depth2[0].classList.add("on");
+  });
+}
 
 for (var i = 0; i < depth2Text.length; i++) {
   depth2Text[i].addEventListener("click", function () {
+    event.preventDefault();
     for (var i = 0; i < depth2Text.length; i++) {
       depth2Text[i].classList.remove("on");
     }
@@ -116,5 +125,82 @@ $(document).ready(function () {
     for (var i = 0; i < sec1TextBox.length; i++) {
       sec1TextBox[i].style.display = "block";
     }
+  });
+});
+
+// 섹션2 : 슬라이드
+
+$(document).ready(function () {
+  $(".sec2 .ad_box .img_box").slick({
+    speed: 1500,
+    arrows: false,
+    draggable: false,
+    autoplay: true,
+    pauseOnHover: false,
+  });
+
+  $(".sec2 .arrow_box .left").click(function () {
+    $(".sec2 .ad_box .img_box").slick("slickPrev");
+  });
+  $(".sec2 .arrow_box .right").click(function () {
+    $(".sec2 .ad_box .img_box").slick("slickNext");
+  });
+});
+
+// 섹션3 : 슬라이드
+
+$(document).ready(function () {
+  $(".sec3 .slider").slick({
+    slidesToShow: 4,
+    speed: 1000,
+    draggable: false,
+    arrows: false,
+  });
+
+  $(".sec3 .arrow_box .left").click(function () {
+    $(".sec3 .slider").slick("slickPrev");
+  });
+  $(".sec3 .arrow_box .right").click(function () {
+    $(".sec3 .slider").slick("slickNext");
+  });
+});
+
+// 섹션4 : 슬라이드
+
+$(document).ready(function () {
+  var $slider = $(".sec4 .slider");
+  var $progressBar = $(".sec4 .progress");
+  var $progressBarLabel = $(".sec4 .slider__label");
+
+  $slider.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+    var calc = (nextSlide / slick.slideCount) * 200;
+
+    $progressBar
+      .css("background-size", calc + "% 100%")
+      .attr("aria-valuenow", calc);
+
+    $progressBarLabel.text(calc + "% completed");
+  });
+
+  $slider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
+    if (currentSlide == 3) {
+      $slider.slick("slickGoTo", 1);
+    }
+  });
+
+  $(".sec4 .slider").slick({
+    slidesToShow: 3,
+    infinite: false,
+    draggable: false,
+    arrows: false,
+    waitForAnimate: true,
+    autoplay: true,
+  });
+
+  $(".sec4 .arrow_box .left").click(function () {
+    $(".sec4 .slider").slick("slickPrev");
+  });
+  $(".sec4 .arrow_box .right").click(function () {
+    $(".sec4 .slider").slick("slickNext");
   });
 });

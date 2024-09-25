@@ -20,6 +20,12 @@ button {
   padding: 0;
   cursor: pointer;
 }
+strong {
+  font-weight: bold;
+}
+.red {
+  color: #ed1b23;
+}
 figure > img {
   max-width: 100%;
 }
@@ -113,6 +119,88 @@ figure > img {
     animation-fill-mode: forwards;
   }
 }
+.tag {
+  i {
+    display: inline-flex;
+    align-items: center;
+    height: 1.25rem;
+    color: #000;
+    font-size: 0.6875rem;
+    font-style: normal;
+    line-height: 1.25rem;
+    font-weight: 700;
+    border-radius: 0.8125rem;
+    background-color: #f1f1f1;
+    padding: 0 0.625rem;
+    margin-right: 0.3125rem;
+    margin-bottom: 0.3125rem;
+  }
+  i.point {
+    background-color: #ffd802;
+    padding-left: 0.25rem;
+  }
+  i.point::before {
+    content: "P";
+    padding-top: 0.0625rem;
+    color: #000;
+    font-size: 0.6875rem;
+    line-height: 0.875rem;
+    text-align: center;
+    width: 0.875rem;
+    height: 0.875rem;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 0.1875rem;
+  }
+}
+i.sale {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.125rem;
+  height: 2.375rem;
+  background: url(../img/main/icon/sale.svg) no-repeat center center / cover;
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 2rem;
+  font-weight: 600;
+  text-align: center;
+  text-indent: initial;
+}
+i.sale::after {
+  content: "%";
+  font-size: 0.5625rem;
+}
+i.reserve {
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #9071cb;
+}
+i.new {
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #4c51b9;
+}
 
 // 애니메이션
 
@@ -130,6 +218,14 @@ figure > img {
   }
   100% {
     transform: rotate(-45deg);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -521,6 +617,10 @@ header {
           border-right: 1px solid #f1f1f1;
           overflow-y: auto;
           display: none;
+          opacity: 0;
+          animation-name: fadeIn;
+          animation-duration: 0.3s;
+          animation-fill-mode: forwards;
           li {
             position: relative;
             a {
