@@ -93,6 +93,7 @@ for (var i = 0; i < depth2Text.length; i++) {
 
 $(document).ready(function () {
   $(".sec1 .slider").slick({
+    autoplay: true,
     draggable: false,
     arrows: false,
     speed: 700,
@@ -165,6 +166,22 @@ $(document).ready(function () {
   });
 });
 
+// 섹션3 : 포인트 점수 할당
+
+const SEC3_PRICE = document.querySelectorAll(".sec3 .card .price .real");
+const SEC3_POINT = document.querySelectorAll(".sec3 .card .tag .point");
+const SEC3_COST = document.querySelectorAll(".sec3 .card .price .cost");
+
+for (var i = 0; i < SEC3_PRICE.length; i++) {
+  SEC3_POINT[i].innerText = SEC3_PRICE[i].innerText / 100;
+  SEC3_PRICE[i].innerText = SEC3_PRICE[i].innerText
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  SEC3_COST[i].innerText = SEC3_COST[i].innerText
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 // 섹션4 : 슬라이드
 
 $(document).ready(function () {
@@ -184,7 +201,7 @@ $(document).ready(function () {
 
   $slider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
     if (currentSlide == 3) {
-      $slider.slick("slickGoTo", 1);
+      $slider.slick("slickGoTo", 0);
     }
   });
 
@@ -204,3 +221,45 @@ $(document).ready(function () {
     $(".sec4 .slider").slick("slickNext");
   });
 });
+
+// 섹션6 : 카테고리 탭
+
+const SEC6_TAB1 = document.querySelectorAll(".sec6 .depth1 li");
+
+for (var i = 0; i < SEC6_TAB1.length; i++) {
+  SEC6_TAB1[i].addEventListener("click", function (e) {
+    event.preventDefault();
+    for (var i = 0; i < SEC6_TAB1.length; i++) {
+      SEC6_TAB1[i].classList.remove("on");
+    }
+    this.classList.add("on");
+  });
+}
+
+const SEC6_TAB2 = document.querySelectorAll(".sec6 .depth2 li");
+
+for (var i = 0; i < SEC6_TAB2.length; i++) {
+  SEC6_TAB2[i].addEventListener("click", function (e) {
+    event.preventDefault();
+    for (var i = 0; i < SEC6_TAB2.length; i++) {
+      SEC6_TAB2[i].classList.remove("on");
+    }
+    this.classList.add("on");
+  });
+}
+
+// 섹션6 : 포인트 점수 할당
+
+const SEC6_PRICE = document.querySelectorAll(".sec6 .card .price .real");
+const SEC6_POINT = document.querySelectorAll(".sec6 .card .tag .point");
+const SEC6_COST = document.querySelectorAll(".sec6 .card .price .cost");
+
+for (var i = 0; i < SEC6_PRICE.length; i++) {
+  SEC6_POINT[i].innerText = SEC6_PRICE[i].innerText / 100;
+  SEC6_PRICE[i].innerText = SEC6_PRICE[i].innerText
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  SEC6_COST[i].innerText = SEC6_COST[i].innerText
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
