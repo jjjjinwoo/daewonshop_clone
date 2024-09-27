@@ -989,4 +989,388 @@ h2 {
   margin-top: 6.25rem;
   padding: 6.25rem 0;
   background-color: #f8f8f8;
+  .container {
+    max-width: 1200px;
+    padding: 0 2.5rem;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    .card {
+      background-color: white;
+      max-width: 23.125rem;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      .text_box.outer {
+        padding: 1.875rem;
+        .sub {
+          display: inline-block;
+          color: #fff;
+          font-size: 0.875rem;
+          font-weight: 600;
+          line-height: 1.6875rem;
+          border-radius: 1.6875rem;
+          padding: 0 1.25rem;
+          background-color: #000;
+          margin-bottom: 1.25rem;
+        }
+        .title {
+          color: #000;
+          font-size: 1.5rem;
+          font-weight: 600;
+          letter-spacing: -0.075rem;
+        }
+        .text {
+          color: #000;
+          margin-top: 0.5rem;
+          height: 2.5rem;
+        }
+        .more {
+          display: inline-block;
+          color: #000;
+          font-size: 0.75rem;
+          font-weight: 500;
+          margin-top: 1.25rem;
+          padding-right: 1.25rem;
+          background: url(../img/main/icon/more.png) no-repeat center right;
+        }
+      }
+      .item_box {
+        padding: 1.875rem;
+        padding-top: 0;
+        .item {
+          display: flex;
+          align-items: center;
+          margin-top: 1.25rem;
+          .img_box {
+            width: 4.375rem;
+            height: 4.375rem;
+            border-radius: 0.625rem;
+            overflow: hidden;
+            flex-shrink: 0;
+          }
+          .text_box {
+            position: relative;
+            width: 60%;
+            padding-left: 0.75rem;
+            h4 {
+              a {
+                word-break: keep-all;
+                text-overflow: ellipsis;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                display: -webkit-box;
+                overflow: hidden;
+              }
+            }
+            .price {
+              margin-top: 0.25rem;
+              .real {
+                color: #000;
+                font-size: 1.125rem;
+                font-weight: 700;
+              }
+              .real::after {
+                content: "원";
+                font-size: 0.75rem;
+              }
+              .cost {
+                color: #888;
+                font-size: 0.875rem;
+                text-decoration: line-through;
+              }
+              .cost::after {
+                content: "원";
+              }
+              .rate {
+                color: #ed1b23;
+                font-size: 1.125rem;
+                font-weight: 700;
+              }
+            }
+            .like {
+              position: absolute;
+              top: 0;
+              right: -2.375rem;
+              width: 1.5rem;
+              height: 1.5rem;
+              background: url(../img/main/icon/detail_icon_social.png) no-repeat
+                left 0 top 0 / 3.875rem 3rem;
+              font-size: 0;
+              line-height: 0;
+              text-indent: -250%;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+      .item_box::before {
+        content: "line";
+        font-size: 0;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #d4d4d4;
+      }
+    }
+  }
+}
+
+.sec8 {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 6.25rem 2.5rem;
+    margin: 0 auto;
+    .notice_box {
+      width: 100%;
+      max-width: 22.5rem;
+      .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #000;
+        h3 {
+          color: #000;
+          font-size: 1.25rem;
+          font-weight: 600;
+        }
+        .more {
+          color: #888;
+          font-size: 0.875rem;
+          font-weight: 600;
+        }
+        .more::after {
+          content: "+";
+          margin-left: 0.25rem;
+        }
+      }
+      .list {
+        li {
+          padding: 1.25rem 0;
+          border-bottom: 1px solid #f1f1f1;
+          display: flex;
+          flex-direction: column;
+          .date {
+            color: #999;
+            font-size: 0.75rem;
+          }
+          a {
+            color: #666;
+            margin-top: 0.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 푸터
+
+footer {
+  background-color: #fafafa;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 2.875rem 2.5rem 4.375rem;
+    margin: 0 auto;
+    .top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .quick {
+        display: flex;
+        li {
+          display: flex;
+          a {
+            color: #000;
+            font-size: 0.875rem;
+            font-weight: 600;
+          }
+        }
+        li:not(li:first-child)::before {
+          content: "elipse";
+          font-size: 0;
+          display: block;
+          width: 3px;
+          height: 3px;
+          background-color: #333;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 0 0.75rem;
+          position: relative;
+          top: 0.313rem;
+        }
+      }
+      .right {
+        display: flex;
+        align-items: center;
+        .sns {
+          display: flex;
+          margin-right: 80px;
+          a {
+            margin-left: 0.5rem;
+          }
+        }
+        .family {
+          position: relative;
+          width: 11.5rem;
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #000;
+            font-size: 0.875rem;
+            line-height: 2.5rem;
+            font-weight: 600;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 2.625rem;
+            padding: 0 0.875rem;
+            box-sizing: border-box;
+          }
+          a::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0.875rem;
+            transform: translate(0, -50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            background: url(../img/main/footer/icon/familysite-arrow.png)
+              no-repeat center center / contain;
+          }
+        }
+      }
+    }
+    .middle {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      .left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .logo {
+          margin-bottom: 1.5rem;
+        }
+        p {
+          display: flex;
+          margin-bottom: 0.375rem;
+          span {
+            color: #888;
+            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            strong {
+              margin-left: 0.3125rem;
+            }
+          }
+          span:not(span:first-child)::before {
+            content: "line";
+            font-size: 0;
+            width: 1px;
+            height: 0.5rem;
+            background-color: #ddd;
+            margin: 0 0.5rem;
+          }
+        }
+        .bi {
+          color: #888;
+          font-size: 0.75rem;
+          line-height: 1.375rem;
+          display: inline-flex;
+          align-items: center;
+          border: 1px solid #ccc;
+          border-radius: 1.5rem;
+          padding: 0 0.625rem;
+          margin-top: 0.625rem;
+        }
+        .bi::after {
+          content: "";
+          width: 1rem;
+          height: 1rem;
+          background: url(../img/main/footer/icon/f-bizinfor.png) no-repeat
+            center center / contain;
+        }
+      }
+      .right {
+        display: flex;
+        height: fit-content;
+        .qr {
+          position: relative;
+          margin-right: 80px;
+          em {
+            color: #000;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 0.625rem;
+          }
+        }
+        .qr::before {
+          content: "line";
+          font-size: 0;
+          position: absolute;
+          top: 0;
+          right: -2.5rem;
+          height: 100%;
+          border-left: 1px solid #ddd;
+        }
+        .cscenter {
+          h4 {
+            color: #000;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+          }
+          h3 {
+            color: #000;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+          }
+          p {
+            color: #888;
+            font-size: 0.75rem;
+            font-weight: 400;
+          }
+          p.info {
+            font-size: 0.625rem;
+            font-weight: 400;
+            margin-top: 0.625rem;
+            padding-top: 0.625rem;
+            border-top: 1px solid #ddd;
+          }
+        }
+      }
+    }
+    .bottom {
+      padding-top: 2.5rem;
+      margin-top: 2.5rem;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .left {
+        color: #888;
+        font-size: 0.75rem;
+        line-height: 1.4;
+        p {
+          strong {
+            text-decoration: underline;
+          }
+        }
+      }
+      .right {
+        font-size: 0.75rem;
+        line-height: 1.4;
+      }
+    }
+  }
 }

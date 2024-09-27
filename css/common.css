@@ -24,7 +24,11 @@ strong {
 }
 
 .red {
-  color: #ed1b23;
+  color: #ed1b23 !important;
+}
+
+.black {
+  color: black !important;
 }
 
 figure > img {

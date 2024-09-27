@@ -259,7 +259,9 @@ for (var i = 0; i < SEC6_PRICE.length; i++) {
   SEC6_PRICE[i].innerText = SEC6_PRICE[i].innerText
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  SEC6_COST[i].innerText = SEC6_COST[i].innerText
-    .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  if (SEC6_COST[i]) {
+    SEC6_COST[i].innerText = SEC6_COST[i].innerText
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 }
