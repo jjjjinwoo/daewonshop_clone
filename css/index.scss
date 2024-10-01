@@ -25,6 +25,7 @@
 
 main {
   background-color: white;
+  position: relative;
 }
 
 // 공통
@@ -1162,6 +1163,60 @@ h2 {
             margin-top: 0.4rem;
           }
         }
+      }
+    }
+  }
+}
+
+// 플롯 아이콘
+
+.float_icon {
+  position: absolute;
+  height: calc(100% - 2.5rem);
+  display: flex;
+  align-items: flex-end;
+  width: 0;
+  top: 0;
+  right: 0;
+  z-index: 200;
+  .container {
+    position: sticky;
+    bottom: 2.5rem;
+    margin-left: -4.375rem;
+    .top_bottom {
+      display: flex;
+      flex-direction: column;
+      border-radius: 1.5625rem;
+      overflow: hidden;
+      background-color: black;
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      transition: 0.5s;
+      button {
+        width: 3.125rem;
+        height: 0;
+        transition: 0.5s;
+      }
+      .top_btn {
+        background: url(../img/main/icon/float_scroll.png) no-repeat center top /
+          3.125rem 6.25rem;
+      }
+      .top_btn.on {
+        height: 3.125rem;
+      }
+      .top_btn.on.with {
+        height: 2.75rem;
+      }
+      .bottom_btn {
+        background: url(../img/main/icon/float_scroll.png) no-repeat center
+          bottom / 3.125rem 6.25rem;
+      }
+      .bottom_btn.on {
+        height: 3.125rem;
+      }
+      .bottom_btn.on.with {
+        height: 2.75rem;
       }
     }
   }

@@ -265,3 +265,48 @@ for (var i = 0; i < SEC6_PRICE.length; i++) {
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 }
+
+// 플롯 아이콘 :
+
+const TOP_BOTTOM_FLOAT = document.querySelector(".float_icon .top_bottom");
+const TOP_FLOAT = document.querySelector(".float_icon .top_btn");
+const BOTTOM_FLOAT = document.querySelector(".float_icon .bottom_btn");
+const BOTTOM = document.querySelector("body").clientHeight;
+
+window.addEventListener("load", function () {
+  const MAIN_HEIGHT =
+    document.querySelector("header").clientHeight +
+    document.querySelector("main").clientHeight -
+    window.innerHeight;
+
+  console.log(MAIN_HEIGHT);
+
+  window.addEventListener("scroll", function () {
+    if (this.scrollY < 268) {
+      TOP_BOTTOM_FLOAT.style.display = "none";
+    } else if (this.scrollY >= 268 && this.scrollY < 1000) {
+      TOP_BOTTOM_FLOAT.style.display = "flex";
+      BOTTOM_FLOAT.classList.add("on");
+      BOTTOM_FLOAT.classList.remove("with");
+      TOP_FLOAT.classList.remove("on");
+      TOP_FLOAT.classList.remove("with");
+    } else if (this.scrollY >= 1000 && this.scrollY < MAIN_HEIGHT) {
+      TOP_FLOAT.classList.add("on");
+      TOP_FLOAT.classList.add("with");
+      BOTTOM_FLOAT.classList.add("on");
+      BOTTOM_FLOAT.classList.add("with");
+    } else if (this.scrollY >= MAIN_HEIGHT) {
+      TOP_FLOAT.classList.remove("with");
+      BOTTOM_FLOAT.classList.remove("on");
+      BOTTOM_FLOAT.classList.remove("with");
+    }
+  });
+
+  TOP_FLOAT.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  BOTTOM_FLOAT.addEventListener("click", function () {
+    window.scrollTo({ top: BOTTOM, behavior: "smooth" });
+  });
+});
